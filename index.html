@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 | Art Tech and Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8b5cf6',
+                        secondary: '#06b6d4',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .animate-fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.7s ease-out;
+            }
+            .animate-fade-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .glass {
+                background: rgba(255,255,255,0.08);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(139, 92, 246, 0.25);
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at 20% 10%, rgba(139, 92, 246, 0.12), transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.1), transparent 40%);
+        }
+    </style>
+</head>
+<body class="text-light overflow-x-hidden">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-gradient bg-gradient-to-r from-primary to-secondary">Resume.ATB</a>
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="hover:text-primary transition-colors">首页</a>
+                <a href="#education" class="hover:text-primary transition-colors">教育背景</a>
+                <a href="#skills" class="hover:text-primary transition-colors">专业技能</a>
+                <a href="#projects" class="hover:text-primary transition-colors">项目作品集</a>
+                <a href="#experience" class="hover:text-primary transition-colors">实践经历</a>
+                <a href="#contact" class="hover:text-primary transition-colors">联系我</a>
+            </div>
+            <!-- 移动端汉堡按钮 -->
+            <button id="menuBtn" class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden glass mt-4 mx-6 rounded-xl p-5">
+            <div class="flex flex-col space-y-4">
+                <a href="#hero" class="hover:text-primary transition-colors">首页</a>
+                <a href="#education" class="hover:text-primary transition-colors">教育背景</a>
+                <a href="#skills" class="hover:text-primary transition-colors">专业技能</a>
+                <a href="#projects" class="hover:text-primary transition-colors">项目作品集</a>
+                <a href="#experience" class="hover:text-primary transition-colors">实践经历</a>
+                <a href="#contact" class="hover:text-primary transition-colors">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 首页自我介绍 -->
+    <section id="hero" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="animate-fade-in">
+                    <p class="text-secondary text-lg mb-3">你好，我是</p>
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight">
+                        <span class="text-gradient bg-gradient-to-r from-primary to-secondary">Coconutyeezy</span>
+                        <br>硕士研究生
+                    </h1>
+                    <p class="mt-6 text-gray-300 text-lg max-w-xl">
+                        香港岭南大学 MSc in Art Tech and Business。
+                        跨工程造价、艺术、科技与商业多领域，擅长文物艺术研究、UI/UX视觉设计、数字IP开发、项目管理。
+                        融合工程逻辑与艺术创意，探索艺术品数字化、文创商业化的创新方案。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#projects" class="px-6 py-3 bg-primary rounded-lg hover:bg-primary/80 transition-all">查看作品集</a>
+                        <a href="#contact" class="px-6 py-3 glass rounded-lg hover:bg-white/15 transition-all">联系我</a>
+                    </div>
+                </div>
+                <div class="animate-fade-in flex justify-center">
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 blur-xl opacity-70"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-head animate-fade-in mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold">教育背景</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-3"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass rounded-xl p-7 card-hover animate-fade-in">
+                    <span class="text-secondary">2025 - 2027</span>
+                    <h3 class="text-xl font-semibold mt-2">香港岭南大学 | 艺术科技与商业理学硕士</h3>
+                    <p class="text-gray-300 mt-2">MSc in Art Tech and Business</p>
+                    <ul class="mt-4 text-gray-300 space-y-2">
+                        <li><i class="fa fa-check text-primary mr-2"></i>文物及艺术品鉴赏与收藏方向</li>
+                        <li><i class="fa fa-check text-primary mr-2"></i>研究主题：宋代建盏与茶文化数字化复原</li>
+                    </ul>
+                </div>
+                <div class="glass rounded-xl p-7 card-hover animate-fade-in">
+                    <span class="text-secondary">本科阶段</span>
+                    <h3 class="text-xl font-semibold mt-2">广东白云学院 | 工程造价 管理学学士</h3>
+                    <p class="text-gray-300 mt-2">工程经济、项目管理方向</p>
+                    <ul class="mt-4 text-gray-300 space-y-2">
+                        <li><i class="fa fa-check text-primary mr-2"></i>CAD制图、广联达建模</li>
+                        <li><i class="fa fa-check text-primary mr-2"></i>数字装配式建筑应用工程师证书</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-head animate-fade-in mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold">专业技能</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-3"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass rounded-xl p-6 card-hover animate-fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">艺术 & 文物研究</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">艺术品鉴赏</span>
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">文物数字化复原</span>
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">艺术史文献</span>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6 card-hover animate-fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-secondary">设计 & UI/UX</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">Figma</span>
+                        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">PS / AI</span>
+                        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">网页原型</span>
+                        <span class="px-3 py-1 bg-secondary/20 rounded-full text-sm">品牌IP视觉</span>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-6 card-hover animate-fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">商业 & 工程</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">项目管理</span>
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">CAD /广联达</span>
+                        <span class="px-3 py-1 bg-primary/20 rounded-full text-sm">活动策划</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目作品集 -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-head animate-fade-in mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold">项目作品集</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-3"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass rounded-xl overflow-hidden card-hover animate-fade-in">
+                    <div class="h-44 bg-gradient-to-br from-primary/30 to-secondary/20"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">宋代建盏数字复原项目</h3>
+                        <p class="text-gray-300 mt-2">宋代建盏与茶文化研究，AI视觉复原，课程论文与展示项目。</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden card-hover animate-fade-in">
+                    <div class="h-44 bg-gradient-to-br from-secondary/30 to-primary/20"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">duanduan 饮品APP UI设计</h3>
+                        <p class="text-gray-300 mt-2">完整APP界面设计，品牌视觉体系，Figma交互原型。</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden card-hover animate-fade-in">
+                    <div class="h-44 bg-gradient-to-br from-primary/30 to-secondary/20"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">猫咪IP 椰子Yeezy 品牌开发</h3>
+                        <p class="text-gray-300 mt-2">宠物IP形象、周边产品、品牌包装与商业方案规划。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-head animate-fade-in mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold">实践经历</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-3"></div>
+            </div>
+            <div class="space-y-8">
+                <div class="glass rounded-xl p-7 card-hover animate-fade-in">
+                    <span class="text-secondary">实习</span>
+                    <h3 class="text-xl font-semibold mt-2">华联世纪工程咨询股份有限公司</h3>
+                    <p class="text-gray-300 mt-2">造价咨询方向实习</p>
+                    <ul class="mt-4 text-gray-300 space-y-2">
+                        <li><i class="fa fa-angle-right text-primary mr-2"></i>参与工程算量、图纸建模、造价文件整理工作</li>
+                    </ul>
+                </div>
+                <div class="glass rounded-xl p-7 card-hover animate-fade-in">
+                    <span class="text-secondary">校园实践</span>
+                    <h3 class="text-xl font-semibold mt-2">吉他协会 活动策划</h3>
+                    <p class="text-gray-300 mt-2">活动统筹、宣传物料设计、现场执行</p>
+                    <ul class="mt-4 text-gray-300 space-y-2">
+                        <li><i class="fa fa-angle-right text-primary mr-2"></i>策划落地校园文艺活动，负责流程与视觉宣传</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-head animate-fade-in mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold">联系我</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mt-3"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="animate-fade-in">
+                    <p class="text-gray-300">欢迎交流艺术科技、文物数字化、UI/UX、文创商业相关方向。</p>
+                    <div class="mt-8 space-y-5">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-primary">
+                                <i class="fa fa-envelope fa-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">邮箱</p>
+                                <p>ruierhong@ln.hk</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-primary">
+                                <i class="fa fa-linkedin fa-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">LinkedIn</p>
+                                <p>Coconutyeezy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-xl p-7 animate-fade-in">
+                    <form class="space-y-5">
+                        <div>
+                            <label class="block text-gray-300 mb-2">姓名</label>
+                            <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">邮箱</label>
+                            <input type="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">留言</label>
+                            <textarea rows="4" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary rounded-lg hover:bg-primary/80 transition-all">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-10 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>© 2026 | Art Tech and Business | Personal Resume</p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', ()=>{
+            if(window.scrollY > 50){
+                navbar.classList.add('glass');
+            }else{
+                navbar.classList.remove('glass');
+            }
+        })
+
+        // 移动端菜单
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', ()=>{
+            mobileMenu.classList.toggle('hidden');
+        })
+        // 点击菜单链接自动关闭
+        mobileMenu.querySelectorAll('a').forEach(link=>{
+            link.onclick = ()=> mobileMenu.classList.add('hidden');
+        })
+
+        // 滚动入场动画
+        const fadeElements = document.querySelectorAll('.animate-fade-in');
+        const observer = new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('active');
+                }
+            })
+        }, {threshold:0.1})
+        fadeElements.forEach(el=> observer.observe(el))
+    </script>
+</body>
+</html>
